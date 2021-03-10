@@ -55,11 +55,41 @@ public class MethodEx02 {
 		// mt.type10(300);		불가능 : 매개변수의 개수가 일치해야 한다.
 		
 		
+		System.out.println("================================");
+		
 		//입력값과 결과값이 모두 없는 경우
 		mt.type00();
 		mt.type00();
 		mt.type00();
 		
+		System.out.println("================================");
+
+		//입력값과 결과값이 모두 있는 경우
+		System.out.println(mt.type11(3, 7));
+		
+		int res1 = mt.type11(30, 70);
+		System.out.println(res1);
+		
+		
+		if ( mt.type11(300, 700) == 1000 ) {
+			
+			System.out.println("결과값은 1000");
+		}
+		
+		int res2 = mt.type11(3000, 7000);
+		
+		
+		if (res2 == 10000) {
+			
+			System.out.println("결과값은 10000");
+		}
+		
+		
+		System.out.println("===============================");
+		
+		//입력값은 없고 결과값은 있는 경우
+		
+		System.out.println(mt.type01());
 		
 		
 	}
