@@ -3,6 +3,8 @@ package step6_02.method;
 import java.util.Random;
 import java.util.Scanner;
 
+/*
+
 class SpeedGame {
 
 	Scanner scan = new Scanner(System.in);
@@ -123,3 +125,5 @@ public class MethodEx17_테스트문제 {
 	}
 
 }
+
+*/

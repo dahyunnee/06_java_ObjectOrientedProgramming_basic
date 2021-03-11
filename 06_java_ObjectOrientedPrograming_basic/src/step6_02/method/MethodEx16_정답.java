@@ -5,7 +5,7 @@ import java.util.Scanner;
 //# 틱택토
 
 
-//2021.03.10 21:31 ~ 
+//2021.03.10 21:31 ~ 22:00
 
 
 class TicTacToe{
@@ -49,10 +49,13 @@ class TicTacToe{
 			System.out.println();
 		}
 		
-		this.exitCross();
-		this.exitHeight();
-		this.exitWidth();
 		
+		if (turn != 0 ) {
+			
+		this.exitWidth();
+		this.exitHeight();
+		this.exitCross();
+		}
 		
 		if (win == 1 || win == 2) return;
 		
@@ -125,29 +128,83 @@ class TicTacToe{
 			
 			if (game[i][0].equals(game[i][1]) && game[i][0].equals(game[i][2]) && game[i][2].equals(game[i][1])) {
 				
-				if (game[i][0].equals("O")) win = 1;
-				else win = 2;
+				if (!game[i][0].equals(" ")) {
+					
+					if (game[i][0].equals("O")) win = 1;
+					else win = 2;
+					break;
+				}
+				
 			}
 		}	
 	
+		
 	}
 	
 	
 	void exitHeight() {
+		
+		for (int i = 0; i < game.length; i++) {
+			
+			if (game[0][i].equals(game[1][i]) && game[0][i].equals(game[2][i]) && game[2][i].equals(game[1][i])) {
+				
+				if (!game[0][i].equals(" ")) {
+					
+					
+					if (game[0][i].equals("O")) win = 1;
+					else win = 2;
+					break;
+					
+				}
+				
+			}
+		}	
+		
+		
 		
 	}
 	
 
 	void exitCross() {
 		
+		// 00 11 22
+		// 02 11 20
+		
+		if (game[0][0].equals(game[1][1]) && game[0][0].equals(game[2][2]) && game[2][2].equals(game[1][1])) {
+			
+			if (!game[0][0].equals(" ")) {
+				
+				if (game[0][0].equals("O")) win = 1;
+				else win = 2;
+				
+			
+			}
+			
+			
+		}
+		
+		if (game[0][2].equals(game[1][1]) && game[0][2].equals(game[2][0]) && game[2][0].equals(game[1][1])) {
+			
+			if (!game[0][2].equals(" ")) {
+				
+				if (game[0][2].equals("O")) win = 1;
+				else win = 2;
+			
+			}
+			
+	
+			
+		}
+		
+		
+		
 	}
 	
 	void run() {
 		
 		// game 배열을 공백(" ")으로 초기화 ( 초기화하지 않을 경우 null 값)
-		setGame();
-		
-		showGame();
+		this.setGame();		
+		this.showGame();
 		
 		
 	}
